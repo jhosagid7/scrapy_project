@@ -40,7 +40,7 @@ class IndeedSpider(scrapy.Spider):
             if link is not None:
                 
                 # Relative link
-                yield response.follow(url=link, callback=self.parse_applyto, meta={'extract_date':extract_date,'location':location,'company_name':company_name,'post_date':post_date,'job_description':job_description,'salary':salary,'searched_job':searched_job})
+                yield response.follow(url=link, callback=self.parse_applyto, meta={'extract_date':extract_date,'location':location,'company_name':company_name,'post_date':post_date,'job_description':job_description,'salary':salary,'searched_job':searched_job,'link':link})
 
         
         next_page_url = response.xpath('//*[contains(@aria-label, "Next")]/@href').get()
@@ -57,11 +57,17 @@ class IndeedSpider(scrapy.Spider):
         job_description = response.request.meta['job_description']
         salary          = response.request.meta['salary']
         searched_job          = response.request.meta['searched_job']
+        link          = response.request.meta['link']
 
         rows = response.xpath('//div[@id="applyButtonLinkContainer"]/div/div[2]/a')
 
+        if rows:
+            Apply_to      = rows.xpath('.//@href').get()
+        else:
+            Apply_to    = link
+
         # Data extracted from the link apply to company, to obtain the link apply to
-        Apply_to = rows.xpath('.//@href').get()
+         
         job_title = response.xpath('.//h1/text()').get().replace(u"\u00a0", " ")
 
         yield {
