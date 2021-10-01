@@ -64,7 +64,9 @@ class IndeedSpider(scrapy.Spider):
         if rows:
             Apply_to      = rows.xpath('.//@href').get()
         else:
-            Apply_to    = link
+            # Absolute link
+            absolute_url = response.urljoin(link)
+            Apply_to    = absolute_url
 
         # Data extracted from the link apply to company, to obtain the link apply to
          
