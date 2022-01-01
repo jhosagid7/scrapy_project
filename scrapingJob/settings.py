@@ -18,7 +18,8 @@ NEWSPIDER_MODULE = 'scrapingJob.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapingJob (+http://www.yourdomain.com)'
 # USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0"
-USER_AGENT =  'Mozilla / 5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit / 537.36 (KHTML, como Gecko) Chrome / 61.0.3163.100 Safari / 537.36'
+USER_AGENT =  'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+# USER_AGENT =  'Mozilla / 5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit / 537.36 (KHTML, como Gecko) Chrome / 61.0.3163.100 Safari / 537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -59,10 +60,10 @@ DOWNLOAD_DELAY = 5.0
 #    'scrapingJob.middlewares.ScrapingjobDownloaderMiddleware': 543,
 #}
 
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+#     'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -72,9 +73,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    'scrapingJob.pipelines.ScrapingjobPipeline': 300,
-}
+# ITEM_PIPELINES = {
+#     'scrapingJob.pipelines.ScrapingjobPipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -96,4 +97,4 @@ HTTPCACHE_ENABLED = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-PROXY_POOL_ENABLED = True
+# PROXY_POOL_ENABLED = True

@@ -46,6 +46,7 @@ pyOpenSSL = "==20.0.1"
 Scrapy = "==2.5.0"
 Twisted = "==21.7.0"
 scrapy-user-agents = "*"
+shub = "*"
 
 [dev-packages]
 
