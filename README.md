@@ -13,7 +13,7 @@ getonboard = scrapy crawl getonboard -a job="Web Programer"
 ```
 
 Test scraper remote with:
-```
+```python
 curl -u d62b44e4e9934393b54c679b5fcb001b: https://app.scrapinghub.com/api/run.json -d project=570286 -d spider=indeed -d job=javascript -d loc=remote
 
 f'https://www.refreshmiami.com/jobs/?search_keywords={self.job}'
