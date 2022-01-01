@@ -1,6 +1,10 @@
-# scrapingJob
+# ScrapingJob
 
-Test scraper with:
+You need to have Pipenv, Python 3.8 installed.
+
+1. Get into the virtual environment `pipenv shell`
+2. Install packages `pipenv install`
+3. Test scraper with:
 ```
 indeed = scrapy crawl indeed -a job=react -a loc=remote
 indeed = scrapy crawl indeed -a job=react -a loc=New%20York%2C%20NY

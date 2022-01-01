@@ -1,0 +1,18 @@
+image:
+  file: .gitpod.Dockerfile
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - init: >
+      psql -U gitpod -c 'CREATE DATABASE example;' &&
+      psql -U gitpod -c 'CREATE EXTENSION unaccent;' -d example &&
+      pipenv install
+
+    command: >
+      pipenv shell
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    visibility: public
+    onOpen: ignore
